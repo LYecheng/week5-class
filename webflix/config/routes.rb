@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   #########################################################
   # The "Golden 7" for accessing the "movies" resource
 
-  get '/movies' => 'movies#index', as: 'movies'
-  get '/movies/:id' => 'movies#show', as: 'movie'
 
   get '/movies/new' => 'movies#new', as: 'new_movie'
-  post '/movies' => 'movies#create'
+  post '/movies' => 'movies#create', as: 'movies'
+
+  get '/movies' => 'movies#index'
+  get '/movies/:id' => 'movies#show', as: 'movie'
 
   get '/movies/:id/edit' => 'movies#edit', as: 'edit_movie'
   patch '/movies/:id' => 'movies#update'
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
   get '/directors/:id/edit' => 'directors#edit', as: 'edit_director'
   patch '/directors/:id' => 'directors#update'
 
-  delete '/directors/:id' => 'directors#destroy'
+  get '/directors/:id' => 'directors#destroy'
 
 
 end

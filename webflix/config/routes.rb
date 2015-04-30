@@ -22,11 +22,13 @@ Rails.application.routes.draw do
   #########################################################
   # The "Golden 7" for accessing the "directors" resource
 
+  get '/directors/new' => 'directors#new', as: 'new_director'
+
   get '/directors' => 'directors#index', as: 'directors'
+  post '/directors' => 'directors#create'
+
   get '/directors/:id' => 'directors#show', as: 'director'
 
-  get '/directors/new' => 'directors#new', as: 'new_director'
-  post '/directors' => 'directors#create'
 
   get '/directors/:id/edit' => 'directors#edit', as: 'edit_director'
   patch '/directors/:id' => 'directors#update'

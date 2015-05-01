@@ -1,8 +1,12 @@
 <%= form_tag "/movies" do %>
 
   <div>
-    <label for="title">Title:</label>
-    <input size="80" name="title" id="title" placeholder="Example: Apollo 13">
+    <%= label_tag :title %>
+    <%= text_field_tag :title, "", placeholder: 'Example: Apollo 13' %>
+    <%= select_tag ... %>
+    <%= check_box_tag
+    <!-- <label for="title">Title:</label>
+    <input size="80" name="title" id="title" placeholder="Example: Apollo 13"> -->
   </div>
 
   <div>

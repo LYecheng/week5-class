@@ -1,7 +1,13 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.order('title asc')
+    if params["keyword"].present?
+      @movies = Movie.where("title LIKE '%#{params["keyword"]}%'")
+    else
+      @movies = Movie.all
+    end
+
+    @movies = @movies.order('title asc')
   end
 
   def show

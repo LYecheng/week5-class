@@ -1,4 +1,18 @@
+<%= form_tag movies_url, :method => "get" do %>
+
+  <%= text_field_tag :keyword %>
+  <%= submit_tag "Search" %>
+
+<% end %>
+
+<!-- <form action="movies" method="get">
+  <input name="keyword" type="text">
+  <input type="submit" name="commit" value="Search">
+</form>
+ -->
 <p><%= link_to "Add a New Movie", "/movies/new" %></p>
+
+<p><%= @movies.count %> Movies.</p>
 
 <table class="table table-striped">
   <tr>
